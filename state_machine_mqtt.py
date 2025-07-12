@@ -26,6 +26,7 @@ def on_message(client, userdata, msg):
     
     if event is None:
         print("Value not provided in message")
+        return
 
     try:
         vehicle_state = State[event]
