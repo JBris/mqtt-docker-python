@@ -1,0 +1,22 @@
+services:
+  mqtt:
+    image: eclipse-mosquitto:2.0-openssl
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./config:/mosquitto/config:rw
+      - mqtt-data:/mosquitto/data
+
+  mqtt_client:
+    image: emqx/mqttx-web:v1.12.0
+    ports:
+      - 9000:80
+      
+networks:
+  default:
+    name: mqtt_docker
+    driver: bridge
+
+volumes:
+  mqtt-data: {}

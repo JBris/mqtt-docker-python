@@ -1,2 +1,3 @@
 # mqtt-docker-python
-Testing MQTT using Docker and the Python client
+
+Testing MQTT using Docker and the Paho Python client
